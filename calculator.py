@@ -11,4 +11,6 @@ def multiply(a: float, b: float) -> float:
 
 def divide(a: float, b: float) -> float:
     """Performs division. Missing check for zero divisor. test-1"""
+    if b == 0:
+        return 0.0
     return a / b
