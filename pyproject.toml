@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "checkout-ledger"
+version = "0.1.0"
+description = "Production-style e-commerce billing & checkout ledger with multi-item carts, tiered discount coupons, and regional tax calculation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
