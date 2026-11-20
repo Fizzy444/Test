@@ -204,7 +204,7 @@ class CheckoutEngine:
         # `tax_rate` is stored as float (e.g. 0.08) while `taxable_subtotal` is Decimal.
         # Multiplying Decimal and float raises:
         # TypeError: unsupported operand type(s) for *: 'Decimal' and 'float'
-        tax_amount = taxable_subtotal * tax_rate
+        tax_amount = taxable_subtotal * Decimal(str(tax_rate))
         return tax_amount.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
 
     def convert_currency(self, amount: Decimal, target_currency: str) -> Decimal:
